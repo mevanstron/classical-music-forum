@@ -6,13 +6,14 @@ import Category from './containers/Category';
 import SubCategory from './components/SubCategory';
 import Thread from './components/Thread';
 import { connect } from 'react-redux'
-import { buildCategories } from './actions/forum';
+import { buildCategories, buildSubCategories } from './actions/forum';
 
 
 
 class App extends Component {
   componentDidMount() {
-    this.props.buildCategories()
+    this.props.buildCategories();
+    this.props.buildSubCategories();
   }
 
   render() {
@@ -34,4 +35,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, { buildCategories })(App);
+export default connect(null, { buildCategories, buildSubCategories })(App);

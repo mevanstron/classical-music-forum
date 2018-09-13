@@ -6,6 +6,14 @@ export function buildCategories() {
   }
 }
 
+export function buildSubCategories() {
+  return dispatch => {
+    return fetch("/api/sub_categories")
+      .then(response => response.json())
+      .then(subCategories => dispatch({type:"BUILD_SUB_CATEGORIES", subCategories}))
+  }
+}
+
 export function addPost(post) {
   return {
     type: "ADD_POST",
