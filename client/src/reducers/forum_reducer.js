@@ -1,7 +1,6 @@
-import { posts } from '../data';
-
-function forumReducer(state = {categories: [], subCategories: [], threads: [], posts}, action) {
+function forumReducer(state = {categories: [], subCategories: [], threads: [], posts: []}, action) {
   switch(action.type) {
+
     case "BUILD_CATEGORIES":
       return {...state, categories: action.categories};
 
@@ -9,8 +8,10 @@ function forumReducer(state = {categories: [], subCategories: [], threads: [], p
       return {...state, subCategories: action.subCategories};
 
     case "BUILD_THREADS":
-      console.log(action.threads);
       return {...state, threads: action.threads};
+
+    case "BUILD_POSTS":
+      return {...state, posts: action.posts};
 
     case "ADD_THREAD":
       return {...state, threads: [...state.threads, action.thread]};
@@ -22,4 +23,5 @@ function forumReducer(state = {categories: [], subCategories: [], threads: [], p
       return state;
   }
 }
+
 export default forumReducer;

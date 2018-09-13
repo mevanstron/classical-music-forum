@@ -22,6 +22,14 @@ export function buildThreads() {
   }
 }
 
+export function buildPosts() {
+  return dispatch => {
+    return fetch("/api/posts")
+      .then(response => response.json())
+      .then(posts => dispatch({type:"BUILD_POSTS", posts}))
+  }
+}
+
 export function addPost(post) {
   return {
     type: "ADD_POST",

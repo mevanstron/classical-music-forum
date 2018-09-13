@@ -6,7 +6,7 @@ import Category from './containers/Category';
 import SubCategory from './components/SubCategory';
 import Thread from './components/Thread';
 import { connect } from 'react-redux'
-import { buildCategories, buildSubCategories, buildThreads } from './actions/forum';
+import { buildCategories, buildSubCategories, buildThreads, buildPosts } from './actions/forum';
 
 
 
@@ -15,6 +15,7 @@ class App extends Component {
     this.props.buildCategories();
     this.props.buildSubCategories();
     this.props.buildThreads();
+    this.props.buildPosts();
   }
 
   render() {
@@ -36,4 +37,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, { buildCategories, buildSubCategories, buildThreads })(App);
+export default connect(null, { buildCategories, buildSubCategories, buildThreads, buildPosts })(App);

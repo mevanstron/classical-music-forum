@@ -17,7 +17,7 @@ class ThreadForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const thread = {id: uuid(), subCategoryId: this.props.subCategoryId, ...this.state};
+    const thread = {id: uuid(), sub_category_id: this.props.sub_category_id, ...this.state};
     this.props.addThread(thread);
     this.setState({
       title: ""

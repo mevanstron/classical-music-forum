@@ -17,7 +17,7 @@ class PostForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const post = {id: uuid(), threadId: this.props.threadId, ...this.state};
+    const post = {id: uuid(), thread_id: this.props.thread_id, ...this.state};
     this.props.addPost(post);
     this.setState({
       content: ""

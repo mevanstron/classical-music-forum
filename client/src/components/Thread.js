@@ -6,14 +6,14 @@ import uuid from 'uuid';
 
 
 const Thread = props => {
-  const filteredPosts = props.posts.filter(post => post.threadId == props.match.params.threadId)
+  const filteredPosts = props.posts.filter(post => post.thread_id == props.match.params.threadId)
   const postList = filteredPosts.map(post => <div key={post.id}>{post.content}<hr /></div>)
 
   return (
     <div>
       <div>{postList}</div>
       <h3>Your post:</h3>
-      <PostForm uuid={uuid()} threadId={props.match.params.threadId} />
+      <PostForm uuid={uuid()} thread_id={props.match.params.threadId} />
     </div>
   )
 }
