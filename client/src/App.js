@@ -5,16 +5,16 @@ import Forum from './containers/Forum';
 import Category from './containers/Category';
 import SubCategory from './components/SubCategory';
 import Thread from './components/Thread';
+import { connect } from 'react-redux'
+import { buildCategories } from './actions/forum';
+
 
 
 class App extends Component {
-  //testing API connection
   componentDidMount() {
-
-    fetch("/api/categories")
-      .then(response => response.json())
-      .then(json => {console.log(json)})
+    this.props.buildCategories()
   }
+
   render() {
     return (
       <div className="App">
@@ -34,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, { buildCategories })(App);

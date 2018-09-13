@@ -1,10 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { categories } from '../data';
 
 class Forum extends React.Component {
   render() {
-    const categoriesList = categories.map(category => <div key={category.id}><Link to={`/${category.id}`}>{category.title}</Link></div>)
+    const categoriesList = this.props.categories.map(category => <div key={category.id}><Link to={`/${category.id}`}>{category.title}</Link></div>)
     return (
       <div>
         {categoriesList}
@@ -13,4 +13,10 @@ class Forum extends React.Component {
   }
 }
 
-export default Forum;
+const mapStateToProps = state => {
+  return ({
+      categories: state.forum.categories
+  })
+}
+
+export default connect(mapStateToProps)(Forum);
