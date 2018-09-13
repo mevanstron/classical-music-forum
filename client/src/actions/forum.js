@@ -14,6 +14,14 @@ export function buildSubCategories() {
   }
 }
 
+export function buildThreads() {
+  return dispatch => {
+    return fetch("/api/forum_threads")
+      .then(response => response.json())
+      .then(threads => dispatch({type:"BUILD_THREADS", threads}))
+  }
+}
+
 export function addPost(post) {
   return {
     type: "ADD_POST",
