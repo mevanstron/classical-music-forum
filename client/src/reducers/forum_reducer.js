@@ -1,6 +1,6 @@
 import { posts, threads } from '../data';
 
-function forumReducer(state = {categories: [],posts, threads}, action) {
+function forumReducer(state = {categories: [], subCategories: [],posts, threads}, action) {
   switch(action.type) {
     case "BUILD_CATEGORIES":
       return {...state, categories: action.categories};
