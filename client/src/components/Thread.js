@@ -6,7 +6,7 @@ import uuid from 'uuid';
 
 
 const Thread = props => {
-  const filteredPosts = props.posts.filter(post => post.thread_id == props.match.params.threadId)
+  const filteredPosts = props.posts.filter(post => post.thread_id === props.match.params.threadId)
   const postList = filteredPosts.map(post => <div key={post.id}>{post.content}<hr /></div>)
 
   return (
