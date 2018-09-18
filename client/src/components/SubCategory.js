@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ThreadForm from '../containers/ThreadForm';
-import uuid from 'uuid';
 
 const SubCategory = props => {
   const filteredThreads = props.threads.filter(thread => thread.sub_category_id === props.match.params.subCategoryId)
@@ -11,7 +10,7 @@ const SubCategory = props => {
     <div>
       <div>{threadList}</div>
       <h3>New Thread</h3>
-      <ThreadForm uuid={uuid()} sub_category_id={props.match.params.subCategoryId} />
+      <ThreadForm sub_category_id={props.match.params.subCategoryId} />
     </div>
   )
 }

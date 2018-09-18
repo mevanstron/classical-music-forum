@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get :posts, to: 'posts#index'
 
     post :forum_threads, to: 'forum_threads#create'
+    post :posts, to: 'posts#create'
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

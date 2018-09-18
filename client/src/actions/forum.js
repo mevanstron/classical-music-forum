@@ -39,8 +39,9 @@ export function addThread(thread) {
 }
 
 export function addPost(post) {
-  return {
-    type: "ADD_POST",
-    post: post
+  return dispatch => {
+    return fetch("/api/posts", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({post: post})})
+      .then(response => response.json())
+      .then(post => dispatch({type: "ADD_POST", post}))
   }
 }

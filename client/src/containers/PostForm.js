@@ -1,5 +1,4 @@
 import React from 'react';
-import uuid from 'uuid';
 import { connect } from 'react-redux';
 import { addPost } from '../actions/forum';
 
@@ -17,7 +16,7 @@ class PostForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const post = {id: uuid(), thread_id: this.props.thread_id, ...this.state};
+    const post = {thread_id: this.props.thread_id, ...this.state};
     this.props.addPost(post);
     this.setState({
       content: ""
