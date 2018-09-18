@@ -1,5 +1,4 @@
 import React from 'react';
-import uuid from 'uuid';
 import { connect } from 'react-redux';
 import { addThread } from '../actions/forum';
 
@@ -17,7 +16,7 @@ class ThreadForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    const thread = {id: uuid(), sub_category_id: this.props.sub_category_id, ...this.state};
+    const thread = {sub_category_id: this.props.sub_category_id, ...this.state};
     this.props.addThread(thread);
     this.setState({
       title: ""

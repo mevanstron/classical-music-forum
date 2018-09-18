@@ -30,16 +30,17 @@ export function buildPosts() {
   }
 }
 
+export function addThread(thread) {
+  return dispatch => {
+    return fetch("/api/forum_threads", {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({forum_thread: thread})})
+      .then(response => response.json())
+      .then(thread => dispatch({type: "ADD_THREAD", thread}))
+  }
+}
+
 export function addPost(post) {
   return {
     type: "ADD_POST",
     post: post
-  }
-}
-
-export function addThread(thread) {
-  return {
-    type: "ADD_THREAD",
-    thread: thread
   }
 }
