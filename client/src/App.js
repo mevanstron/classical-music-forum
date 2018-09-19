@@ -28,8 +28,8 @@ class App extends Component {
           <div className="container">
             <Route exact path={'/'} component={Forum} />
             <Route exact path={'/:categoryPath'} component={Category} />
-            <Route exact path={'/:categoryId/:subCategoryId'} component={SubCategory} />
-            <Route exact path={'/:categoryId/:subCategoryId/:threadId'} component={Thread} />
+            <Route exact path={'/:categoryPath/:subCategoryPath'} component={SubCategory} />
+            <Route exact path={'/:categoryPath/:subCategoryPath/:threadId'} component={Thread} />
           </div>
         </Router>
       </div>

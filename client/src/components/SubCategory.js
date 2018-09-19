@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import ThreadForm from '../containers/ThreadForm';
 
 const SubCategory = props => {
-  const filteredThreads = props.threads.filter(thread => thread.sub_category_id === props.match.params.subCategoryId)
+  const subCategory = props.forum.subCategories.find(subCategory => subCategory.path === props.match.params.subCategoryPath)
+  const filteredThreads = props.forum.threads.filter(thread => thread.sub_category_id === subCategory.id.toString())
   const threadList = filteredThreads.map(thread => <div key={thread.id}><Link to={`${props.match.url}/${thread.id}`}>{thread.title}</Link></div>)
   return (
     <div>
@@ -17,7 +18,7 @@ const SubCategory = props => {
 
 const mapStateToProps = state => {
   return ({
-    threads: state.forum.threads
+    forum: state.forum
   })
 }
 
