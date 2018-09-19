@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 class Forum extends React.Component {
   render() {
-    const categoriesList = this.props.categories.map(category => <div key={category.id}><Link to={`/${category.id}`}>{category.title}</Link></div>)
+    const categoriesList = this.props.forum.categories.map(category => <div key={category.id}><Link to={`/${category.path}`}>{category.title}</Link></div>)
     return (
       <div>
         {categoriesList}
@@ -15,7 +15,7 @@ class Forum extends React.Component {
 
 const mapStateToProps = state => {
   return ({
-      categories: state.forum.categories
+      forum: state.forum
   })
 }
 

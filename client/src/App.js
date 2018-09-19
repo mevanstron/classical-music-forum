@@ -22,12 +22,12 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to the Classical Music Forum</h1>
+          <h1>Welcome to the Classical Music Forum</h1>
         </header>
         <Router>
-          <div>
+          <div className="container">
             <Route exact path={'/'} component={Forum} />
-            <Route exact path={'/:categoryId'} component={Category} />
+            <Route exact path={'/:categoryPath'} component={Category} />
             <Route exact path={'/:categoryId/:subCategoryId'} component={SubCategory} />
             <Route exact path={'/:categoryId/:subCategoryId/:threadId'} component={Thread} />
           </div>

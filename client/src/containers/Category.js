@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const Category = props => {
-  const filteredSubCategories = props.subCategories.filter(subCategory => subCategory.category_id === props.match.params.categoryId);
+  const category = props.forum.categories.find(category => category.path === props.match.params.categoryPath);
+  const filteredSubCategories = props.forum.subCategories.filter(subCategory => subCategory.category_id === category.id.toString());
   const subCategoryList = filteredSubCategories.map(subCategory => <div key={subCategory.id}><Link to={`${props.match.url}/${subCategory.id}`}>{subCategory.title}</Link></div>);
 
   return (
@@ -15,7 +16,7 @@ const Category = props => {
 
 const mapStateToProps = state => {
   return ({
-      subCategories: state.forum.subCategories
+      forum: state.forum
   })
 }
 
