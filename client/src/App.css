@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-image: url("./classical music bg.png");
+  background-repeat: repeat;
+  background-position: center;
+  height: 911px;
 }
 
 .App-logo {
@@ -9,7 +13,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
@@ -21,11 +25,30 @@
 .App-intro {
   font-size: large;
 }
+.breadcrumbs {
+  text-align: left;
+  color: #6E162C;
+}
 
 .container {
-  background-color: #FDE8BB;
-  margin: 30px 30px 30px 30px;
+  background-color: #FFE17F;
+  margin-left: auto;
+  margin-right: auto;
+  position: center;
 }
+
+a:link {
+  color: #6E162C;
+}
+
+a:visited {
+  color: #6E162C;
+}
+
+a:hover {
+  color: #D32A54;
+}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

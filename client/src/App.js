@@ -12,6 +12,7 @@ import { buildCategories, buildSubCategories, buildThreads, buildPosts } from '.
 
 class App extends Component {
   componentDidMount() {
+    console.log("Loading APP")
     this.props.buildCategories();
     this.props.buildSubCategories();
     this.props.buildThreads();
