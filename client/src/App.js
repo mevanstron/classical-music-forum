@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1>Welcome to the Classical Music Forum</h1>
+          <h1>Classical Music Forum</h1>
         </header>
         <Router>
           <div className="container">
