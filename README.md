@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app creates a message board with categories, sub categories, threads and posts all rendered using React, with data persisted in a server managed by Rails.
 
-Things you may want to cover:
+Ruby Version:
+* 2.3.3
 
-* Ruby version
+Rails Version:
+* 5.1.6
 
-* System dependencies
+Install Instructions:
+* bundle install
+* rake db:migrate db:seed
+* cd client
+* npm install
+* npm install --save react-redux
+* npm install --save react-router-dom
+* npm install --save redux
+* npm install --save redux-thunk
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Deployment instructions:
+* rake start
