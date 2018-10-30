@@ -8,7 +8,7 @@ const Thread = props => {
   const subCategory = props.forum.subCategories.find(subCategory => subCategory.id.toString() === thread.sub_category_id)
   const category = props.forum.categories.find(category => category.id.toString() === subCategory.category_id)
   const filteredPosts = props.forum.posts.filter(post => post.thread_id === props.match.params.threadId)
-  const postList = filteredPosts.map(post => <div className="post" key={post.id}>{post.content}<hr /></div>)
+  const postList = filteredPosts.map(post => <div className="post" key={post.id}>{post.content}</div>)
 
   const breadcrumbs = <div className="breadcrumbs">
     <Link to="/">Forum</Link> &gt;
