@@ -38,6 +38,10 @@
   position: center;
 }
 
+.post {
+  background-color: #fff;
+}
+
 a:link {
   color: #6E162C;
 }
